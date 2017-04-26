@@ -37,50 +37,65 @@
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
               <div id="latestpost">
-               <h1 class="bgstyleheader"> <span> Latest News </span>  </h1>
-                <div class="latestnewspost">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="news.php">
-                          <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                        <a href="news.php">
-                        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-                        <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-                      </div>
-                    </div>
-                </div>
-                <div class="latestnewspost">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="news.php">
-                          <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                        <a href="news.php">
-                        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-                        <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-                      </div>
-                    </div>
-                </div>
-                <div class="latestnewspost">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="news.php">
-                          <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                        <a href="news.php">
-                        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-                        <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-                      </div>
-                    </div>
-                </div>
+               <h1 class="bgstyleheader"> <span>  Technology  </span>  </h1>
+               
                 
+
+                <?php
+                include('dashboard/includes/connection.php');
+                $sql = "SELECT * FROM technology ORDER BY Datetimes DESC LIMIT 3";
+                $result = mysqli_query($conn, $sql);
+
+
+                if(mysqli_num_rows($result) > 0){
+                  while($row = $result-> fetch_assoc()){
+                    $id=$row['id'];
+                    $Datetimes=$row['Datetimes'];
+                    $Topic=$row['Topic'];
+                    $Description=$row['Description'];
+                    $Photo=$row['Photo'];
+                  
+                    $headingtechnology = $Topic;
+                    $stringheadingtechnology = strip_tags($headingtechnology);
+                    if (strlen($stringheadingtechnology) > 40) {
+                        $stringCutheadingtechnology = substr($stringheadingtechnology, 0, 40);
+                        $trimsheadingtechnology = substr($stringCutheadingtechnology, 0, strrpos($stringCutheadingtechnology, ' ')).' .....  '; 
+                    }else{
+                       $trimsheadingtechnology = $headingtechnology;
+                    }
+
+                    $detailstechnology = $Description;
+                    $stringdetailstechnology = strip_tags($detailstechnology);
+                    if (strlen($stringdetailstechnology) > 70) {
+                        $stringCutdetailstechnology = substr($stringdetailstechnology, 0, 70);
+                        $trimsdetailstechnology = substr($stringCutdetailstechnology, 0, strrpos($stringCutdetailstechnology, ' ')).' .....  '; 
+                    }else{
+                       $trimsdetailstechnology = $details;
+                    }
+
+
+                          echo '<div class="latestnewspost">';
+                              echo '<div class="media">';
+                               echo ' <div class="media-left">';
+                                 echo ' <a href="news.php?post=technology&id='.$id.'">';
+                                    echo '<img class="media-object" src="img/uploads/'.$Photo.'" alt="" style="width:64px;height:64px;">';
+                                 echo ' </a>';
+                                echo '</div>';
+                                echo '<div class="media-body">';
+                                 echo ' <a href="news.php?post=technology&id='.$id.'">';
+                                  echo '<h1 class="media-heading headerfont"> <span class="">  ' .$trimsheadingtechnology .'</span> </h1>';
+                                  echo '<p>' . $trimsdetailstechnology . '</span></p> </a>';
+                                echo '</div>';
+                              echo '</div>';
+                          echo '</div>';
+                          
+
+                    }
+                  }else{
+                    echo "0 results";
+                  }
+
+                ?>
                 
               </div>
 
@@ -89,48 +104,61 @@
           <div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
               <div id="latestpost">
                 <h1 class="bgstyleheader"> <span> Daily News  </span></h1>
-                <div class="latestnewspost">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="news.php">
-                          <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                        <a href="news.php">
-                        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-                        <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-                      </div>
-                    </div>
-                </div>
-                <div class="latestnewspost">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="news.php">
-                          <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                        <a href="news.php">
-                        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-                        <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-                      </div>
-                    </div>
-                </div>
-                <div class="latestnewspost">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="news.php">
-                          <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                        <a href="news.php">
-                        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-                        <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-                      </div>
-                    </div>
-                </div>
+                  <?php
+                  include('dashboard/includes/connection.php');
+                  $sql = "SELECT * FROM dailynews ORDER BY Datetimes DESC LIMIT 3";
+                  $result = mysqli_query($conn, $sql);
+
+
+                  if(mysqli_num_rows($result) > 0){
+                    while($row = $result-> fetch_assoc()){
+                      $id=$row['id'];
+                      $Datetimes=$row['Datetimes'];
+                      $Topic=$row['Topic'];
+                      $Description=$row['Description'];
+                      $Photo=$row['Photo'];
+                    
+                      $headingdailynews = $Topic;
+                      $stringheadingdailynews = strip_tags($headingdailynews);
+                      if (strlen($stringheadingdailynews) > 40) {
+                          $stringCutheadingdailynews = substr($stringheadingdailynews, 0, 40);
+                          $trimsheadingdailynews = substr($stringCutheadingdailynews, 0, strrpos($stringCutheadingdailynews, ' ')).' .....  '; 
+                      }else{
+                         $trimsheadingdailynews = $headingdailynews;
+                      }
+
+                      $detailsdailynews = $Description;
+                      $stringdetailsdailynews = strip_tags($detailsdailynews);
+                      if (strlen($stringdetailsdailynews) > 70) {
+                          $stringCutdetailsdailynews = substr($stringdetailsdailynews, 0, 70);
+                          $trimsdetailsdailynews = substr($stringCutdetailsdailynews, 0, strrpos($stringCutdetailsdailynews, ' ')).' .....  '; 
+                      }else{
+                         $trimsdetailsdailynews = $details;
+                      }
+
+
+                            echo '<div class="latestnewspost">';
+                                echo '<div class="media">';
+                                 echo ' <div class="media-left">';
+                                   echo ' <a href="news.php?post=dailynews&id='.$id.'">';
+                                      echo '<img class="media-object" src="img/uploads/'.$Photo.'" alt="" style="width:64px;height:64px;">';
+                                   echo ' </a>';
+                                  echo '</div>';
+                                  echo '<div class="media-body">';
+                                   echo ' <a href="news.php?post=dailynews&id='.$id.'">';
+                                    echo '<h1 class="media-heading headerfont"> <span class="">  ' .$trimsheadingdailynews .'</span> </h1>';
+                                    echo '<p>' . $trimsdetailsdailynews . '</span></p> </a>';
+                                  echo '</div>';
+                                echo '</div>';
+                            echo '</div>';
+                            
+
+                      }
+                    }else{
+                      echo "0 results";
+                    }
+
+                  ?>
                
                 
               </div>
@@ -147,14 +175,6 @@
                   <i class="fa fa-mobile facustom" aria-hidden="true"></i> &nbsp; Mobile Number : 44321564  <br/>
                  <i class="fa fa-facebook facustom" aria-hidden="true"></i> &nbsp;Facebook : /newsportal <br/>
                 </p>
-
-                <div id="searchcontent">
-                    <div class="searchbutton">
-                      <input type="text" id="search" placeholder="Search" style="padding:5px 10px;">
-                      <button type="submit"> Search</button>
-                    </div>
-                    
-                </div>
 
               </div>
 
@@ -198,8 +218,7 @@
 </div>
 	
 
-        <script src="js/jquery.min.js"></script>
-         <script src="js/bootstrap.min.js"></script>
+        
     </body>
 
   

@@ -8,10 +8,22 @@ a{
 body{
 	background-color:#F5F5F5;
 }
-
+ ul{     
+    list-style:none!important;
+}
 h1{
 	font-family: 'Merriweather', serif;
 	font-size:160%;
+}
+	
+#readmorebtn{
+	background-color: gray;
+	color:white;
+	padding:5px 12px;
+	text-align: center;
+}
+#readmorebtn:hover{
+	background-color: black;
 }
 .facustom{
 	color: #B71C1C;
@@ -213,7 +225,7 @@ p{
 	height:100px;
 }
 .aboutside{
-	margin-top:30px;
+	margin-top:-20px;
 }
 #latestpostside{
 	margin-top:20px;
@@ -298,6 +310,25 @@ p{
 .newscontentpage img{
 	margin:20px 0px;
 }
+
+
+
+#galleryArea img {     
+    height:320px;
+    width:100%;
+    padding:20px;
+}
+#galleryArea figcaption {     
+   text-align: center;
+}
+@media screen and (max-width:780px){
+#galleryArea img {     
+    height:auto;
+    width:100%;
+    padding:20px;
+}
+}
+
 
 /********************* section ends ****************************/
 /*************************************************/ 

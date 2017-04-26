@@ -13,6 +13,10 @@
       <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Maitree" rel="stylesheet">
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+     
 </head>
 
 <body>

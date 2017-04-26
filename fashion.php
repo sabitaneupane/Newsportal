@@ -1,7 +1,7 @@
 <?php $page = 'fashion' ?>
 <?php include('header.php') ?>
 
-
+ 
 
 <!-- ********* section starts ******** --> 
 <div id="section">
@@ -18,176 +18,44 @@
 			<h1 class="bgstyleheader"> <span> Fashion </span>  </h1>
 
 			<div class="newspagepost">
-				<div class="newspagepostcontent"> 
-					<ul class="media-list">
-					  <li class="media">
-					    <div class="media-left">
-					      <a href="news.php">
-							    <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:140px;height:140px;">
-					      </a>
-					    </div>
-					    <div class="media-body">
-					      <a href="news.php">
-					       <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-					       <p> <span  class="datetime"> November 15, 2016 </span> </p>
-							<p> Nepal has lifted its first ever Asian football title defeating Macau in Nepal has lifted its first ever Asian football title defeating Nepal has lifted its first ever Asian football title defeating  <span>.......... </span></p> </a>
-					    </div>
-					  </li>
-					</ul>
-				</div>
-				<div class="newspagepostcontent"> 
-					<ul class="media-list">
-					  <li class="media">
-					    <div class="media-left">
-					      <a href="news.php">
-							    <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:140px;height:140px;">
-					      </a>
-					    </div>
-					    <div class="media-body">
-					     <a href="news.php">
-					       <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-					       <p> <span  class="datetime"> November 15, 2016 </span> </p>
-							<p> Nepal has lifted its first ever Asian football title defeating Macau in Nepal has lifted its first ever Asian football title defeating Nepal has lifted its first ever Asian football title defeating  <span>.......... </span></p> </a>
-					    </div>
-					  </li>
-					</ul>
-				</div>
-				<div class="newspagepostcontent"> 
-					<ul class="media-list">
-					  <li class="media">
-					    <div class="media-left">
-					       <a href="news.php">
-							    <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:140px;height:140px;">
-					      </a>
-					    </div>
-					    <div class="media-body">
-					       <a href="news.php">
-					        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-					       <p> <span  class="datetime"> November 15, 2016 </span> </p>
-							<p> Nepal has lifted its first ever Asian football title defeating Macau in Nepal has lifted its first ever Asian football title defeating Nepal has lifted its first ever Asian football title defeating  <span>.......... </span></p> </a>
-					    </div>
-					  </li>
-					</ul>
-				</div>
-				<div class="newspagepostcontent"> 
-					<ul class="media-list">
-					  <li class="media">
-					    <div class="media-left">
-					       <a href="news.php">
-							    <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:140px;height:140px;">
-					      </a>
-					    </div>
-					    <div class="media-body">
-					       <a href="news.php">
-					        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-					       <p> <span  class="datetime"> November 15, 2016 </span> </p>
-							<p> Nepal has lifted its first ever Asian football title defeating Macau in Nepal has lifted its first ever Asian football title defeating Nepal has lifted its first ever Asian football title defeating  <span>.......... </span></p> </a>
-					    </div>
-					  </li>
-					</ul>
-				</div>
-				<div class="newspagepostcontent"> 
-					<ul class="media-list">
-					  <li class="media">
-					    <div class="media-left">
-					       <a href="news.php">
-							    <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:140px;height:140px;">
-					      </a>
-					    </div>
-					    <div class="media-body">
-					       <a href="news.php">
-					        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-					       <p> <span  class="datetime"> November 15, 2016 </span> </p>
-							<p> Nepal has lifted its first ever Asian football title defeating Macau in Nepal has lifted its first ever Asian football title defeating Nepal has lifted its first ever Asian football title defeating  <span>.......... </span></p> </a>
-					    </div>
-					  </li>
-					</ul>
-				</div>
-				<div class="newspagepostcontent"> 
-					<ul class="media-list">
-					  <li class="media">
-					    <div class="media-left">
-					       <a href="news.php">
-							    <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:140px;height:140px;">
-					      </a>
-					    </div>
-					    <div class="media-body">
-					       <a href="news.php">
-					        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-					       <p> <span  class="datetime"> November 15, 2016 </span> </p>
-							<p> Nepal has lifted its first ever Asian football title defeating Macau in Nepal has lifted its first ever Asian football title defeating Nepal has lifted its first ever Asian football title defeating  <span>.......... </span></p> </a>
-					    </div>
-					  </li>
-					</ul>
-				</div>
-				<div class="newspagepostcontent"> 
-					<ul class="media-list">
-					  <li class="media">
-					    <div class="media-left">
-					       <a href="news.php">
-							    <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:140px;height:140px;">
-					      </a>
-					    </div>
-					    <div class="media-body">
-					       <a href="news.php">
-					        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-					       <p> <span  class="datetime"> November 15, 2016 </span> </p>
-							<p> Nepal has lifted its first ever Asian football title defeating Macau in Nepal has lifted its first ever Asian football title defeating Nepal has lifted its first ever Asian football title defeating  <span>.......... </span></p> </a>
-					    </div>
-					  </li>
-					</ul>
-				</div>
-				<div class="newspagepostcontent"> 
-					<ul class="media-list">
-					  <li class="media">
-					    <div class="media-left">
-					       <a href="news.php">
-							    <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:140px;height:140px;">
-					      </a>
-					    </div>
-					    <div class="media-body">
-					       <a href="news.php">
-					        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-					       <p> <span  class="datetime"> November 15, 2016 </span> </p>
-							<p> Nepal has lifted its first ever Asian football title defeating Macau in Nepal has lifted its first ever Asian football title defeating Nepal has lifted its first ever Asian football title defeating  <span>.......... </span></p> </a>
-					    </div>
-					  </li>
-					</ul>
-				</div>
-				<div class="newspagepostcontent"> 
-					<ul class="media-list">
-					  <li class="media">
-					    <div class="media-left">
-					       <a href="news.php">
-							    <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:140px;height:140px;">
-					      </a>
-					    </div>
-					    <div class="media-body">
-					       <a href="news.php">
-					        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-					       <p> <span  class="datetime"> November 15, 2016 </span> </p>
-							<p> Nepal has lifted its first ever Asian football title defeating Macau in Nepal has lifted its first ever Asian football title defeating Nepal has lifted its first ever Asian football title defeating  <span>.......... </span></p> </a>
-					    </div>
-					  </li>
-					</ul>
-				</div>
-				<div class="newspagepostcontent"> 
-					<ul class="media-list">
-					  <li class="media">
-					    <div class="media-left">
-					       <a href="news.php">
-							    <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:140px;height:140px;">
-					      </a>
-					    </div>
-					    <div class="media-body">
-					       <a href="news.php">
-					        <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-					       <p> <span  class="datetime"> November 15, 2016 </span> </p>
-							<p> Nepal has lifted its first ever Asian football title defeating Macau in Nepal has lifted its first ever Asian football title defeating Nepal has lifted its first ever Asian football title defeating  <span>.......... </span></p> </a>
-					    </div>
-					  </li>
-					</ul>
-				</div>
+				 <div id="galleryArea">
+
+           <ul class="row">
+              <?php
+              include('dashboard/includes/connection.php');
+              $sql = "SELECT * FROM $page ORDER BY Datetimes DESC";
+              $result = mysqli_query($conn, $sql);
+
+              $u = 1; 
+
+              if(mysqli_num_rows($result) > 0){
+                while($row = $result-> fetch_assoc()){
+                  $id=$row['id'];
+                  $Datetimes=$row['Datetimes'];
+                  $Peoplename=$row['Peoplename'];
+                  $Description=$row['Description'];
+                  $Photo=$row['Photo'];
+
+                     echo '<li class="col-lg-4 col-md-6 col-sm-6 col-xs-12">';
+                      echo ' <figure>';
+                         echo '<a href="model.php?post='.$page.'&id='.$id.'"><img src="img/uploads/' .$Photo. '"  class="img-responsive"></a>';
+                         echo '  <figcaption>' .$Peoplename. '</figcaption>';
+                       echo ' </figure>';
+                     echo '</li>';
+                  
+                  $u++;
+                }
+              }else{
+                echo "0 results";
+              }
+
+
+              ?>
+
+                       
+                             
+                            </ul>
+                    </div>
 
 				<div class="pagepaginationbuttom">
 					<nav>

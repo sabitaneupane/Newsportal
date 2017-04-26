@@ -16,76 +16,61 @@
      	<div class="container-fluid">
 			<h1 class="bgstyleheader"> <span> Interview </span>  </h1>
 			<div class="newspagepost">
-				<div class="newspagepostcontent"> 
-				<div class="row">
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
-						<div class="homenewspost">
-							<a href="news.php"> <img src="img/newsimg/footballplayer.jpg" alt="" class="img-responsive">
-							 <h1 class="headerfont"> <span class="">   Nepal lifts the AFC Solidarity Cup </span> </h1>
-							 <h2  class="headerfont"> <p> Name: Sush Sharma </p></h2>
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> </a>
-		     		    </div>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
-						<div class="homenewspost">
-							<a href="news.php"> <img src="img/newsimg/footballplayer.jpg" alt="" class="img-responsive">
-							 <h1 class="headerfont"> <span class="">   Nepal lifts the AFC Solidarity Cup </span> </h1>
-							  <h2  class="headerfont"> <p> Name: Sush Sharma </p></h2>
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> </a>
-		     		    </div>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
-						<div class="homenewspost">
-							<a href="news.php"> <img src="img/newsimg/footballplayer.jpg" alt="" class="img-responsive">
-							 <h1 class="headerfont"> <span class="">   Nepal lifts the AFC Solidarity Cup </span> </h1>
-							  <h2  class="headerfont"> <p> Name: Sush Sharma </p></h2>
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> </a>
-		     		    </div>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
-						<div class="homenewspost">
-							<a href="news.php"> <img src="img/newsimg/footballplayer.jpg" alt="" class="img-responsive">
-							 <h1 class="headerfont"> <span class="">   Nepal lifts the AFC Solidarity Cup </span> </h1>
-							  <h2  class="headerfont"> <p> Name: Sush Sharma </p></h2>
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> </a>
-		     		    </div>
+					<div class="row">
+							<?php
+							include('dashboard/includes/connection.php');
+							$sql = "SELECT * FROM $page ORDER BY Datetimes DESC LIMIT 2";
+							$result = mysqli_query($conn, $sql);
+
+
+							if(mysqli_num_rows($result) > 0){
+								while($row = $result-> fetch_assoc()){
+									$id=$row['id'];
+									$Datetimes=$row['Datetimes'];
+									$Names=$row['Names'];
+									$Topic=$row['Topic'];
+									$Description=$row['Description'];
+									$Photo=$row['Photo'];
+								
+									$heading = $Topic;
+									$stringheading = strip_tags($heading);
+									if (strlen($stringheading) > 40) {
+									    $stringCutheading = substr($stringheading, 0, 40);
+									    $trimsheading = substr($stringCutheading, 0, strrpos($stringCutheading, ' ')).' .....  '; 
+									}else{
+										 $trimsheading = $heading;
+									}
+
+									$details = $Description;
+									$stringdetails = strip_tags($details);
+									if (strlen($stringdetails) > 70) {
+									    $stringCutdetails = substr($stringdetails, 0, 70);
+									    $trimsdetails = substr($stringCutdetails, 0, strrpos($stringCutdetails, ' ')).' .....  '; 
+									}else{
+										 $trimsdetails = $details;
+									}
+
+
+										
+											echo '<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">';
+												echo '<div class="homenewspost">';
+													echo '<a href="news.php?post='.$page.'&id='.$id.'">';
+													echo ' <h1 class="headerfont" style=" color:#B71C1C;"> <span class="">  ' .$trimsheading .'</span> </h1>';
+													echo ' <img class="img-responsive" src="img/uploads/'.$Photo.'" alt="" ></a>';
+													echo ' <h2 class="headerfont" >Name: <span class="">  ' .$Names .'</span> </h2>';
+									     		     echo '<p>' . $trimsdetails . '</span></p> ';
+								     		   echo ' </div>';
+											echo '</div>';
+										
+
+									}
+								}else{
+									echo "0 results";
+								}
+
+							?>
 					</div>
 
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
-						<div class="homenewspost">
-							<a href="news.php"> <img src="img/newsimg/footballplayer.jpg" alt="" class="img-responsive">
-							 <h1 class="headerfont"> <span class="">   Nepal lifts the AFC Solidarity Cup </span> </h1>
-							  <h2  class="headerfont"> <p> Name: Sush Sharma </p></h2>
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> </a>
-		     		    </div>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
-						<div class="homenewspost">
-							<a href="news.php"> <img src="img/newsimg/footballplayer.jpg" alt="" class="img-responsive">
-							 <h1 class="headerfont"> <span class="">   Nepal lifts the AFC Solidarity Cup </span> </h1>
-							  <h2  class="headerfont"> <p> Name: Sush Sharma </p></h2>
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> </a>
-		     		    </div>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
-						<div class="homenewspost">
-							<a href="news.php"> <img src="img/newsimg/footballplayer.jpg" alt="" class="img-responsive">
-							 <h1 class="headerfont"> <span class="">   Nepal lifts the AFC Solidarity Cup </span> </h1>
-							  <h2  class="headerfont"> <p> Name: Sush Sharma </p></h2>
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> </a>
-		     		    </div>
-					</div>
-				</div>
-				</div>
-				</div>
-
-				<div class="pagepaginationbuttom">
-					<nav>
-					  <ul class="pager">
-					    <li><a href="#">Previous</a></li>
-					    <li><a href="#">Next</a></li>
-					  </ul>
-					</nav>
 				</div>
 		</div>
 

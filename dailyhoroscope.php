@@ -1,3 +1,28 @@
+<?php
+include('dashboard/includes/connection.php');
+$rid = $_GET['id'];
+$sql = "SELECT * FROM horoscope WHERE id='$rid' ";
+$result = mysqli_query($conn, $sql);
+	if(mysqli_num_rows($result) > 0){
+		while($row = $result->fetch_assoc()){
+			$id=$row['id'];
+			$Datetimes=$row['Datetimes'];
+			$Aries=$row['Aries'];
+			$Taurus=$row['Taurus'];
+			$Gemini=$row['Gemini'];
+			$Cancer = $row['Cancer'];
+			$Leo = $row['Leo'];
+			$Virgo =$row['Virgo'];
+			$Libra =$row['Libra'];
+			$Scorpio =$row['Scorpio'];
+			$Sagittarius = $row['Sagittarius'];
+			$Capricorn = $row['Capricorn'];
+			$Aquarius = $row['Aquarius'];
+			$Pisces = $row['Pisces'];
+	}
+}
+?>
+
 <?php $page = 'horoscope' ?>
 <?php include('header.php') ?>
 
@@ -15,7 +40,7 @@
      <div class="col-lg-8 col-md-8 col-sm-12 col-xm-12" style="padding:10px 0px;">
      	<div class="container-fluid">
 			<h1 class="bgstyleheader"> <span> Horoscope </span>  </h1>
-			  <p> <span  class="datetime"> November 15, 2016 </span> </p>
+			  <p> <span  class="datetime"> <?php echo $Datetimes; ?> </span> </p>
 			<div class="newspagepost">
 				<div class="newspagepostcontent"> 
 				<div class="row">
@@ -26,7 +51,7 @@
 							 <h1 class="headerfont"> <span class="">   Aries  </span> </h1>
 							  <img src="img/horoscope/Aries.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> 
+			     		    <p> <?php echo $Aries; ?></p> 
 		     		    </div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
@@ -35,7 +60,7 @@
 							 <h1 class="headerfont"> <span class="">   Taurus  </span> </h1>
 							  <img src="img/horoscope/Taurus.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> 
+			     		    <p> <?php echo $Taurus; ?> </p> 
 		     		    </div>
 					</div>
 					<div class="clearfix"> </div>
@@ -45,7 +70,7 @@
 							 <h1 class="headerfont"> <span class="">   Gemini  </span> </h1>
 							  <img src="img/horoscope/Gemini.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> 
+			     		    <p> <?php echo $Gemini; ?> </p> 
 		     		    </div>
 					</div>
 					
@@ -55,7 +80,7 @@
 							 <h1 class="headerfont"> <span class="">   Cancer   </span> </h1>
 							  <img src="img/horoscope/Cancer.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p>
+			     		    <p><?php echo $Cancer; ?></p>
 		     		    </div>
 					</div>
 						<div class="clearfix"> </div>
@@ -65,7 +90,7 @@
 							 <h1 class="headerfont"> <span class="">   Leo  </span> </h1>
 							  <img src="img/horoscope/Leo.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> 
+			     		    <p> <?php echo $Leo; ?> </p> 
 		     		    </div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
@@ -74,7 +99,7 @@
 							 <h1 class="headerfont"> <span class="">   Virgo   </span> </h1>
 							  <img src="img/horoscope/Virgo.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> 
+			     		    <p><?php echo $Virgo; ?> </p> 
 		     		    </div>
 					</div>
 						<div class="clearfix"> </div>
@@ -84,7 +109,7 @@
 							 <h1 class="headerfont"> <span class="">   Libra  </span> </h1>
 							  <img src="img/horoscope/Libra.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p>
+			     		    <p> <?php echo $Libra; ?> </p>
 		     		    </div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
@@ -93,7 +118,7 @@
 							 <h1 class="headerfont"> <span class="">   Scorpio  </span> </h1>
 							  <img src="img/horoscope/Scorpio.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> 
+			     		    <p><?php echo $Scorpio; ?> </p> 
 		     		    </div>
 					</div>
 						<div class="clearfix"> </div>
@@ -103,7 +128,7 @@
 							 <h1 class="headerfont"> <span class="">   Sagittarius  </span> </h1>
 							  <img src="img/horoscope/Sagittarius.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p>
+			     		    <p> <?php echo $Sagittarius; ?></p>
 		     		    </div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
@@ -112,7 +137,7 @@
 							 <h1 class="headerfont"> <span class="">   Capricorn  </span> </h1>
 							  <img src="img/horoscope/Capricorn.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p>
+			     		    <p> <?php echo $Capricorn; ?></p>
 		     		    </div>
 					</div>
 						<div class="clearfix"> </div>
@@ -122,7 +147,7 @@
 							 <h1 class="headerfont"> <span class="">   Aquarius  </span> </h1>
 							  <img src="img/horoscope/Aquarius.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p> 
+			     		    <p> <?php echo $Aquarius; ?> </p> 
 		     		    </div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
@@ -131,7 +156,7 @@
 							 <h1 class="headerfont"> <span class="">   Pisces  </span> </h1>
 							  <img src="img/horoscope/Pisces.jpg" alt="" class="img-responsive">
 							
-			     		    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span> </p>
+			     		    <p><?php echo $Pisces; ?></p>
 		     		    </div>
 					</div>
 						<div class="clearfix"> </div>

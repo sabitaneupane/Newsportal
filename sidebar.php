@@ -1,17 +1,6 @@
 <div class="col-lg-4 col-md-4 col-sm-12 col-xm-12" style="padding:10px 0px;">
-			<div class="container-fluid">
 
-				<div id="searchcontent">
-					  <div class="searchbutton">
-					    <input type="text" id="search" placeholder="Search" style="padding:5px 10px;">
-					  	<button type="submit"> Search</button>
-					  </div>
-					  
-				</div>
-
-			</div>
-
-			<div class="aboutside">
+			<div class="aboutside" style="margin-top:0px">
 				<div class="container-fluid">
 					<h1 class="bgstyleheader"> <span> About Us </span>  </h1>
 						<div class="aboutsidecontent">
@@ -26,77 +15,64 @@
 			<div id="latestpostside">
 				<div class="container-fluid">
 					<h1 class="bgstyleheader"> <span> Entertainment </span>  </h1>
-					<div class="latestnewspost">
-							<div class="media">
-							  <div class="media-left">
-							    <a href="news.php">
-							      <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-							    </a>
-							  </div>
-							  <div class="media-body">
-							    <a href="news.php">
-							    <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-							    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-							  </div>
-							</div>
-					</div>
-					<div class="latestnewspost">
-							<div class="media">
-							  <div class="media-left">
-							    <a href="news.php">
-							      <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-							    </a>
-							  </div>
-							  <div class="media-body">
-							    <a href="news.php">
-							    <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-							    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-							  </div>
-							</div>
-					</div>
-					<div class="latestnewspost">
-							<div class="media">
-							  <div class="media-left">
-							    <a href="news.php">
-							      <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-							    </a>
-							  </div>
-							  <div class="media-body">
-							    <a href="news.php">
-							    <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-							    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-							  </div>
-							</div>
-					</div>
-					<div class="latestnewspost">
-							<div class="media">
-							  <div class="media-left">
-							    <a href="news.php">
-							      <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-							    </a>
-							  </div>
-							  <div class="media-body">
-							    <a href="news.php">
-							    <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-							    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-							  </div>
-							</div>
-					</div>
-					<div class="latestnewspost">
-							<div class="media">
-							  <div class="media-left">
-							    <a href="news.php">
-							      <img class="media-object" src="img/newsimg/footballplayer.jpg" alt="" style="width:64px;height:64px;">
-							    </a>
-							  </div>
-							  <div class="media-body">
-							    <a href="news.php">
-							    <h1 class="media-heading headerfont"> <span class="">  Nepal lifts the AFC Solidarity Cup </span> </h1>
-							    <p> Nepal has lifted its first ever Asian football title defeating Macau in <span>.......... </span></p> </a>
-							  </div>
-							</div>
-					</div>
-					
+
+
+					<?php
+					include('dashboard/includes/connection.php');
+					$sql = "SELECT * FROM entertainment ORDER BY Datetimes DESC LIMIT 5";
+					$result = mysqli_query($conn, $sql);
+
+
+					if(mysqli_num_rows($result) > 0){
+						while($row = $result-> fetch_assoc()){
+							$id=$row['id'];
+							$Datetimes=$row['Datetimes'];
+							$Topic=$row['Topic'];
+							$Description=$row['Description'];
+							$Photo=$row['Photo'];
+						
+							$heading = $Topic;
+							$stringheading = strip_tags($heading);
+							if (strlen($stringheading) > 40) {
+							    $stringCutheading = substr($stringheading, 0, 40);
+							    $trimsheading = substr($stringCutheading, 0, strrpos($stringCutheading, ' ')).' .....  '; 
+							}else{
+								 $trimsheading = $heading;
+							}
+
+							$details = $Description;
+							$stringdetails = strip_tags($details);
+							if (strlen($stringdetails) > 70) {
+							    $stringCutdetails = substr($stringdetails, 0, 70);
+							    $trimsdetails = substr($stringCutdetails, 0, strrpos($stringCutdetails, ' ')).' .....  '; 
+							}else{
+								 $trimsdetails = $details;
+							}
+
+
+										echo '<div class="latestnewspost">';
+												echo '<div class="media">';
+												 echo ' <div class="media-left">';
+												   echo ' <a href="news.php?post=entertainment&id='.$id.'">';
+												      echo '<img class="media-object" src="img/uploads/'.$Photo.'" alt="" style="width:64px;height:64px;">';
+												   echo ' </a>';
+												  echo '</div>';
+												  echo '<div class="media-body">';
+												   echo ' <a href="news.php?post=entertainment&id='.$id.'">';
+												    echo '<h1 class="media-heading headerfont"> <span class="">  ' .$trimsheading .'</span> </h1>';
+												    echo '<p>' . $trimsdetails . '</span></p> </a>';
+												  echo '</div>';
+												echo '</div>';
+										echo '</div>';
+										
+
+							}
+						}else{
+							echo "0 results";
+						}
+
+					?>
+
 				</div>
 			</div>
 
@@ -104,9 +80,32 @@
 					<div class="container-fluid">
 						<h1 class="bgstyleheader"> <span>Thought of the day </span></h1>
 						<div class="thoughtcontent">
-	     		      		<img src="img/thought1.jpg" class="img-responsive" alt="" style="padding-bottom: 10px;">
-							<h1 class="headerfont">  Name&nbsp;:  <span class="">Anita Acharya </span> </h1>
-		     		       	<blockquote> "When you don't build your dream then someone else will appoint you to fulfill their dream" </blockquote> 
+						<?php
+						include('dashboard/includes/connection.php');
+						$sql = "SELECT * FROM thoughtoftheday ORDER BY Datetimes DESC LIMIT 1";
+						$result = mysqli_query($conn, $sql);
+
+
+						if(mysqli_num_rows($result) > 0){
+							while($row = $result-> fetch_assoc()){
+								$id=$row['id'];
+								$Datetimes=$row['Datetimes'];
+								$Name=$row['Name'];
+								$Thought=$row['Thought'];
+								$Photo=$row['Photo'];
+							
+								     		      		echo ' <img src="img/uploads/' .$Photo. '"class="img-responsive" alt="" style="padding-bottom: 10px;">';
+								     		      		 echo '<p> <span  class="datetime"> November 15, 2016 </span> </p>';
+														echo '<h1 class="headerfont">  Name&nbsp;:  <span class="">' . $Name .'</span> </h1>';
+									     		       	echo '<blockquote> <span>  "' . $Thought .' " </span>	<a href="thoughtoftheday.php" target="_blank" class="pull-right" id="readmorebtn" > Read More </a> </blockquote> ';
+								}
+							}else{
+								echo "0 results";
+							}
+
+						?>
+	     		      		
+
 						</div> 
 					</div>
 				</div>
@@ -115,47 +114,65 @@
 					<div class="container-fluid">
 					<h1 class="bgstyleheader"> <span> Top Models </span>  </h1>
 
+
+
 					    <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
-					     		  <!-- Indicators -->
-					     		  <ol class="carousel-indicators">
-					     		    <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
-					     		    <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
-					     		    <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
-					     		  </ol>
 
 					     		  <!-- Wrapper for slides -->
 					     		  <div class="carousel-inner" role="listbox" id="carouselcustom">
-					     		    <div class="item active">
-					     		       	<a href="fashion.php">
-					     		      		<img src="img/model1.jpg" alt="" >
-					     		      	</a>
-					     		      <div class="carousel-caption">
-					     		       	<a href="fashion.php">
-						     		       	
-						     		       <p> Name: Barsha Raut </p> 
-						     		    </a>
-					     		      </div>
-					     		    </div>
-					     		    <div class="item ">
-					     		       	<a href="fashion.php">
-					     		      		<img src="img/model2.jpg" alt="" >
-					     		      	</a>
-					     		      <div class="carousel-caption">
-					     		       	<a href="fashion.php">
-						     		       	<p> Name: Aakash Shrestha </p> 
-						     		    </a>
-					     		      </div>
-					     		    </div>
-					     		    <div class="item ">
-					     		       	<a href="fashion.php">
-					     		      		<img src="img/model3.jpg" alt="" >
-					     		      	</a>
-					     		      <div class="carousel-caption">
-					     		       	<a href="fashion.php">
-						     		       	<p> Name: Priyanka Karki</p> 
-						     		    </a>
-					     		      </div>
-					     		    </div>
+					     		    
+					     		  	<?php
+					     		  	include('dashboard/includes/connection.php');
+					     		  	$sql = "SELECT * FROM fashion ORDER BY Datetimes DESC LIMIT 5";
+					     		  	$result = mysqli_query($conn, $sql);
+
+					     		  	$u = 1;
+					     		  	if(mysqli_num_rows($result) > 0){
+					     		  		while($row = $result-> fetch_assoc()){
+					     		  				$id=$row['id'];
+												$Datetimes=$row['Datetimes'];
+												$Peoplename=$row['Peoplename'];
+												$Description=$row['Description'];
+												$Photo=$row['Photo'];
+
+													if ($u == 1 ){
+														     		  echo  ' <div class="item active">';
+														     		        echo  '	<a href="fashion.php">';
+														     		      	 echo  '	<img src="img/uploads/'.$Photo.'" alt="" >';
+														     		      	 echo  '</a>';
+														     		      echo  ' <div class="carousel-caption">';
+														     		       echo  ' 	<a href="fashion.php">';
+															     		       	
+															     		     echo  '   <p> <span style="background:#B71C1C;padding:5px 10px;"> '.$Peoplename. ' </span> </p> ';
+															     		    echo  ' </a>';
+														     		      echo  ' </div>';
+														     		    echo  ' </div>';
+
+														     		}else{
+														     			 echo  ' <div class="item">';
+					     		  						     		        echo  '	<a href="fashion.php">';
+					     		  						     		      	 echo  '	<img src="img/uploads/'.$Photo.'" alt="" >';
+					     		  						     		      	 echo  '</a>';
+					     		  						     		      echo  ' <div class="carousel-caption">';
+					     		  						     		       echo  ' 	<a href="fashion.php">';
+					     		  							     		       	
+					     		  							     		     echo  '   <p> <span style="background:#B71C1C;padding:5px 10px;"> '.$Peoplename. ' </span> </p>';
+					     		  							     		    echo  ' </a>';
+					     		  						     		      echo  ' </div>';
+					     		  						     		    echo  ' </div>';
+
+														     		}
+														     $u++;
+					     		  						     		 
+					     		  			}
+					     		  		}else{
+					     		  			echo "0 results";
+					     		  		}
+
+					     		  	?>
+
+						     		   
+					     		   
 					     		    </div>
 					     		    
 
